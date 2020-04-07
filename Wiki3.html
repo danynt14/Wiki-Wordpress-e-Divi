@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!--border: 1px solid rgba(0, 0, 0, 0.8);-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki</title>
+
+    <style>
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          padding: 10px;
+         
+        }
+        .grid-item {
+          border: none;
+          padding: 20px;
+          font-size: 30px;
+          text-align: center;
+          vertical-align: middle;
+          
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container" >
+
+        <img class="grid-item" style="padding: 25px" src="logo.png" alt="Logo da Nest Digital">
+        <h1 class="grid-item" style="letter-spacing: 2px; padding-top: 0%" >
+           Parallax e <br> Overlay 
+        </h1> 
+    </div>
+
+   <div style="padding:60px;">
+   <p class="">Quando o usuário adiciona um imagem na sessão e marca a opção de parallax,
+       assim que ele adiciona um gradiente sobre a sessão["Overlay"], o efeito de parallax 
+       não acompanha o gradiente, perdendo a compatibilidade com a imagem que foi adicinada,
+       diminuindo a senssação do efeito.
+       Para isso é preciso adicionar o código abaixo na sessão de confirguração global no DIVI: 
+       e adicionar a classe css gradient-overlay na sessão onde foi inserido a imagem.
+
+   </p>
+ 
+    
+   <hr>
+   <p style="padding-left: 50px; ">
+         
+        
+        .gradient-overlay:before {<br>
+        content:"";<br>
+        position:absolute;<br>
+        z-index:1;<br>
+        background:inherit;<br>
+        top:0;<br>
+        bottom:0;<br>
+        width:100%;<br>
+        }<br>
+
+        .gradient-overlay .et_pb_row {<br>
+        z-index:2 !important;<br>
+        }<br>
+        .gradient-overlay {<br>
+        background-color: transparent;<br>
+        }<br>
+    </p>
+    <hr>
+  </div> 
+
+
+</body>
+</html>
